@@ -1,0 +1,20 @@
+greet:
+     message: Hello!
+     list:
+         persons: Gourab,Ruma,Juhita
+     dbdetails: "{driver:'org.postgresql.Driver',url:'jdbc:postgresql://localhost:5432/hibernatetest',username:'postgres',password:'admin'}"
+
+#---To Demo @ConfigurationProperties-----
+     db: 
+       driver: org.postgresql.Driver
+       url: jdbc:postgresql://localhost:5432/hibernatetest
+       username: postgres
+       password: admin
+
+#To expose all the configuration to the Spring Actuator Endpoint, localhost:8080/actuator/configprops
+management.endpoints.web.exposure.include: "*"
+
+spring:
+  profiles:
+    active:
+    - test
